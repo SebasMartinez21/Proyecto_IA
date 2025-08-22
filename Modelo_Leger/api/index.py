@@ -4,9 +4,9 @@ import pandas as pd
 import os
 
 app = Flask(__name__, template_folder="../templates", static_folder="../static")
-modelo = pickle.load(open(os.path.join(os.path.dirname(__file__), "../modelo/modelo.pkl"), "rb"))
+modelo = pickle.load(open(os.path.join(os.path.dirname(__file__), "../modelo/modelo0.pkl"), "rb"))
 
-columnas = pickle.load(open(os.path.join(os.path.dirname(__file__), "../modelo/columnas.pkl"), "rb"))
+columnas = pickle.load(open(os.path.join(os.path.dirname(__file__), "../modelo/columnas0.pkl"), "rb"))
 
 @app.route("/", methods=["GET"])
 def formulario():
@@ -16,8 +16,10 @@ def formulario():
 def predecir():
     datos = { 
         "Sexo": request.form["Sexo"],
-        "Salto_Largo": int(request.form["Salto_Largo"]),
-        "Velocidad_Maxima": float(request.form["Velocidad_Maxima"]),
+        "IMC_categoria": request.form["IMC_categoria"],
+        "Salto_Largo": request.form["Salto_Largo"],
+        "30_m": request.form["30_m"],
+        "IMC": float(request.form["IMC"]),
         "IA": float(request.form["IA"]),
         "PR": float(request.form["PR"])
     }
