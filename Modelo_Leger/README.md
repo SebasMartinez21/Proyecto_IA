@@ -32,3 +32,4 @@ Modelo_Leger
 | sklearn  | pip install scikit-learn |
 | pandas   | pip install pandas       |
 | pickle   | pip install pickle       |
+| numpy    | pip install numpy        |

@@ -6,11 +6,15 @@ import pickle
 '''
 Modelo de predicción de rendimiento en Léger (Regresión)
 Variable Target: 
-- Léger
+- Leger
 Variables necesarias (Features): 
-- Velocidad maxima
-- VR (Velocidad Relativa)
-- IVT (Indice de Velocidad-Talla)
+- Sexo
+- Salto Largo
+- 30 m Lanzados (s)
+- IMC
+- IA
+- PR
+- IMC_categoria
 '''
 
 # 💎 Lectura del excel (.xlsx)
@@ -34,24 +38,12 @@ if "Velocidad Maxima" in df:
 # Imprimir la suma de los nulos por columna.
 #print("\n Nulos por columnas de los datos: \n", df.isnull().sum())
 
-'''
--------------------- Agregar columnas de: --------------------
-1. ° IMC (Indice de Masa Corporal) -> Peso/((Talla/100)^2)
-2. ° VR (Velocidad Relativa) -> Velocidad Maxima/Peso
-3. ° IVT (Indice de Velocidad-Talla) -> Velocidad Maxima/Talla
-4. ° Clasificación de IMC
-df["IMC"] = df["Peso (kg)"]/((df["Talla (cm)"]/100)**2)
-
-df["VR"] = df["Velocidad Maxima"]/df["Peso (kg)"]
-
-df["IVT"] = df["Velocidad Maxima"]/df["Talla (cm)"]
-'''
 
 '''
 -------------------- Agregar columnas de: --------------------
 1. ° IMC (Indice de Masa Corporal) -> Peso/((Talla/100)^2)
-2. ° PR (Potencia Relativa) -> Velocidad Maxima/Peso
-3. ° IA (Indice de Agilidad) -> Velocidad Maxima/Talla
+2. ° PR (Potencia Relativa) -> Salto Largo/Peso (kg)
+3. ° IA (Indice de Agilidad) -> Altura/(10x5 (s) X Peso (kg))
 4. ° Clasificación de IMC
 '''
 

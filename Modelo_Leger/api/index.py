@@ -17,8 +17,8 @@ def predecir():
     datos = { 
         "Sexo": request.form["Sexo"],
         "IMC_categoria": request.form["IMC_categoria"],
-        "Salto_Largo": request.form["Salto_Largo"],
-        "30_m": request.form["30_m"],
+        "Salto_Largo": int(request.form["Salto_Largo"]),
+        "30_m": float(request.form["30_m"]),
         "IMC": float(request.form["IMC"]),
         "IA": float(request.form["IA"]),
         "PR": float(request.form["PR"])
