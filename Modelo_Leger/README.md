@@ -13,6 +13,7 @@ IA (Indice de Agilidad) y PR (Potencia Relativa).
 ### **Versión de Python 3.13.5**
 
 # ⚜️ Estructura del proyecto ⚜️
+```
 Modelo_Leger 
 -api
     -index.py
@@ -24,6 +25,7 @@ Modelo_Leger
     -formulario.html
     -resultado.html
 -README.md
+```
 
 ## Librerías
 | Libreria | Comando                  |
